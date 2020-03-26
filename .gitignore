@@ -10,5 +10,5 @@ export_presets.cfg
 *.import
 data_*/
 
-.DS_Store/
+.DS_Store
 ignore_me
