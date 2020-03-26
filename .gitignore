@@ -9,3 +9,5 @@ export_presets.cfg
 .mono/
 *.import
 data_*/
+
+.DS_Store/
