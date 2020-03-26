@@ -37,3 +37,4 @@ collision_layer = 0
 modulate = Color( 0.196078, 0.121569, 0.709804, 1 )
 position = Vector2( 0, -13 )
 shape = SubResource( 2 )
+[connection signal="body_entered" from="StompDetc" to="." method="_on_StompDetc_body_entered"]
