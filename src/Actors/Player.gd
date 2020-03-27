@@ -10,9 +10,8 @@ func _on_EnemyDetc_area_entered(area: Area2D) -> void:
 	
 # warning-ignore:unused_argument
 func _on_EnemyDetc_body_entered(body: PhysicsBody2D) -> void:
-	queue_free()
+	die()
 	
-
 # warning-ignore:unused_argument
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
@@ -48,5 +47,8 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	out.y = -impulse
 	return out
 	
+func die() -> void:
+	PlayerData.deaths += 1
+	queue_free()
 
 

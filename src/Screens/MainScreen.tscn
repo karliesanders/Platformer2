@@ -22,6 +22,7 @@ __meta__ = {
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 5 )
 texture = ExtResource( 1 )
 stretch_mode = 2
 __meta__ = {
@@ -29,8 +30,12 @@ __meta__ = {
 }
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
-margin_top = 210.0
-margin_bottom = 237.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -102.5
+margin_top = 298.0
+margin_right = 102.5
+margin_bottom = 325.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Square Platformer"

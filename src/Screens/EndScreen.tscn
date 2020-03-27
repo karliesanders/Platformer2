@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/UserInterface/PlayBtn.gd" type="Script" id=1]
+[ext_resource path="res://start-assets/background.png" type="Texture" id=2]
+[ext_resource path="res://src/UserInterface/ChangeScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://start-assets/ui_theme.tres" type="Theme" id=4]
+[ext_resource path="res://src/UserInterface/QuitBtn.gd" type="Script" id=5]
+[ext_resource path="res://src/UserInterface/QuitBtn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=7]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -107.0
+margin_right = 130.0
+margin_bottom = 111.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayBtn" type="Button" parent="Menu" instance=ExtResource( 3 )]
+margin_right = 260.0
+margin_bottom = 107.0
+size_flags_vertical = 3
+text = "Play Again"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene_path = "res://src/Screens/MainScreen.tscn"
+
+[node name="QuitBtn" type="Button" parent="Menu" instance=ExtResource( 6 )]
+margin_top = 111.0
+margin_right = 260.0
+margin_bottom = 218.0
+size_flags_vertical = 3
+text = "Quit"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 7 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -94.0
+margin_top = 276.0
+margin_right = 94.0
+margin_bottom = 303.0
+text = "Congratulations!"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.5
+margin_top = 330.0
+margin_right = 80.5
+margin_bottom = 387.0
+text = "Your score: %s
+Deaths: %s"
+[connection signal="button_up" from="Menu/PlayBtn" to="Menu/PlayBtn" method="_on_PlayBtn_button_up"]
+[connection signal="button_up" from="Menu/QuitBtn" to="Menu/QuitBtn" method="_on_QuitBtn_button_up"]
